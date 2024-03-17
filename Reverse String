@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(){
+    char array[27];
+    cout<<"Enter String: ";
+    cin>>array;
+
+
+    int i;
+    for(i=0; array[i]!='\0'; i++){
+
+    }
+    cout<<"Reverse Order: ";
+    for(int j=i-1; j>=0; j--){
+        cout<<array[j];
+    }
+}
