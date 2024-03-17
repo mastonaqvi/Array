@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main(){
+    char array1[1000];
+    char array2[1000];
+    char array3[1000];
+    char   plus[3000]; 
+
+    cout<<"Enter First String: ";
+    cin>>array1;
+
+    cout<<"Enter Second String: ";
+    cin>>array2;
+
+    cout<<"Enter First String: ";
+    cin>>array3;
+
+
+    int i,j,k;
+    for(i=0; array1[i]!='\0'; i++){
+        plus[i]=array1[i];
+    }for(j=0; array2[j]!='\0'; j++){
+        plus[i+j]=array2[j];
+    }for(k=0; array3[k]!='\0'; k++){
+        plus[i+j+k]=array3[k];
+    }
+    plus[i+j+k]='\0';
+    cout<<"Marged String: "<<plus;
+    return 0;
+}
