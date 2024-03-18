@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+    char array[1000];
+    cout << "Enter String: ";
+    cin >> array;
+    int num[128] = {0};
+    int i;
+    for (i = 0; array[i] != '\0'; i++) {
+        num[array[i]]++;
+    }
+    for (int j = 0; j < 128; j++) {
+        if (num[j] > 0) {
+            if (j >= 'A' && j <= 'Z') {
+                cout << "Upper Case " <<  array[1000] << ": " << num[j] << endl;
+            } else if (j >= 'a' && j <= 'z') {
+                cout << "Lower Case " << array[1000] << ": " << num[j] << endl;
+            } else if (j >= '0' && j <= '9') {
+                cout << "Number " <<  array[1000] << ": " << num[j] << endl;
+            } else {
+                cout << "Character " <<  array[1000] << ": " << num[j] << endl;
+            }
+        }
+    }
+    return 0;
+}
