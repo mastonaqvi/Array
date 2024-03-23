@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main(){
+    char array[]="naqvi";
+    int i;
+    for(i=0; array[i]!='\0'; i++){
+        
+    }
+    cout<<"Size of Array: "<<i<<endl;
+    return 0;
+
+}
