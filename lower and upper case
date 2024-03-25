@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main(){
+
+    char array[27];
+    cout<<"Enter String: ";
+    cin>>array;
+
+    for(int i=0; array[i]!='\0'; i++){
+        if((array[i]>='a' && array[i]<='z') || (array[i]>='A' && array[i]<='Z')){
+            if(array[i]>='a' && array[i]<='z'){
+                cout<<"lowercase latter: "<< array[i]<<endl;
+            }else if(array[i]>='A' && array[i]<='Z'){
+                cout<<"Uppercase latter: "<< array[i]<<endl;
+            }
+            }else{
+                cout<<"Invalid Character: ";
+            }
+        }
+    
+    return 0;
+}
