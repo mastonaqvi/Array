@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int array1[100], array2[100], array3[100];
+    int size1, size2, size3;
+
+    cout << "Enter the size of array1: ";
+    cin >> size1;
+    cout << "Enter elements of array1: ";
+    for (int i = 0; i < size1; i++) {
+        cin >> array1[i];
+    }
+
+    cout << "Enter the size of array2: ";
+    cin >> size2;
+    cout << "Enter elements of array2: ";
+    for (int i = 0; i < size2; i++) {
+        cin >> array2[i];
+    }
+
+    cout << "Enter the size of array3: ";
+    cin >> size3;
+    cout << "Enter elements of array3: ";
+    for (int i = 0; i < size3; i++) {
+        cin >> array3[i];
+    }
+
+    int i = 0, j = 0, k = 0;
+
+    cout << "Common odd elements in the arrays are: ";
+    while (i < size1 && j < size2 && k < size3) {
+        if (array1[i] == array2[j] && array2[j] == array3[k]) {
+            if (array1[i] % 2 != 0) {
+                cout << array1[i] << " ";
+            }
+            i++;
+            j++;
+            k++;
+        }
+        else if (array1[i] < array2[j]) {
+            i++;
+        }
+        else if (array2[j] < array3[k]) {
+            j++;
+        }
+        else {
+            k++;
+        }
+    }
+
+    return 0;
+}
