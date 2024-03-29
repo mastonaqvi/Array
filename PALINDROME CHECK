@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main(){
+    char array[100];
+    cout<<"Enter String: ";
+    cin>>array;
+    int k;
+    for( k=0; array[k]!='\0'; k++){
+    }  
+        for(int i=0, j=k-1; i<j; i--, i++ ){
+            
+            if(array[i]==array[j]){
+                cout<<"Enter String is PALINDROME "<<endl;
+                break;
+            }else{
+                cout<<"Enter String is NOT PALINDROME "<<endl;
+                break;
+            }
+        }
+
+    
+    return 0;
+}
