@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int array[1000];
+    int numbers;
+    cout<<"Enter Number: ";
+    cin>>numbers; 
+    
+    cout<<"Enter "<<numbers<<" NUmbers: ";
+    for(int i=0; i<numbers; i++){
+        cin>>array[i];
+    }
+    int first=0,last=numbers-1,mid,num;
+    cout<<"Enter Number to Find: ";
+    cin>>num;
+
+    while(first<=last){
+        mid=(first+last)/2;
+        if(array[mid]==num){
+            cout<<"NUmber Is Found at Location: "<<mid+1;
+            break;
+        }else if(array[mid]<num){
+            first=mid+1;
+            first=mid+1;
+            
+
+        }else{
+            last=mid-1;
+        }if(first>last){
+            cout<<"Invald Number";
+        }
+    }
+    return 0;
+
+}
