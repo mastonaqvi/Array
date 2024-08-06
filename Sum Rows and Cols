@@ -1,0 +1,172 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int* sumrows(int** a, int r)
+{
+    int sum = 0;
+    int temp[1000]{};
+    for (int i = 0; i < r; i++)
+    {
+        sum = 0;
+        for (int j = 0; j < r; j++)
+        {
+            sum = sum + a[i][j];
+        }
+        temp[i] = sum;
+    }
+    return temp;
+}
+
+int* sumcols(int** a, int c)
+{
+    int sum = 0;
+    int temp[1000]{};
+    for (int i = 0; i < c; i++)
+    {
+        sum = 0;
+        for (int j = 0; j < c; j++)
+        {
+            sum = sum + a[j][i];
+        }
+        temp[i] = sum;
+    }
+    return temp;
+}
+
+void totalsum(int** a, int r)
+{
+    int sum = 0;
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < r; j++)
+        {
+            sum = sum + a[i][j];
+        }
+    }
+    cout << "total sum: " << sum << endl;
+}
+
+int rowsread(ifstream& fin)
+{
+    int lines = 0;
+    char temp[1000]{};
+    while (fin.getline(temp, 1000))
+    {
+        lines++;
+    }
+    return lines;
+}
+
+void allocaterows(int**& arr, int r)
+{
+    arr = new int*[r];
+}
+
+void allocatecol(int**& arr, int r)
+{
+    for (int i = 0; i < r; i++)
+    {
+        arr[i] = new int[r];
+    }
+}
+
+void readdata(ifstream& fin, int**& arr, int r)
+{
+    if (fin)
+    {
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < r; j++)
+            {
+                fin >> arr[i][j];
+            }
+        }
+    }
+}
+
+void display(int**& arr, int r)
+{
+    for (int i = 0; i < r; i++)
+    {
+        cout << endl;
+        for (int j = 0; j < r; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+    }
+}
+
+void displayRow(int**& arr, int row, int r)
+{
+    cout << row + 1 << "nd row: ";
+    for (int j = 0; j < r; j++)
+    {
+        cout << arr[row][j] << " ";
+    }
+    cout << endl;
+}
+
+void displayColumn(int**& arr, int col, int r)
+{
+    cout << col + 1 << "rd col: ";
+    for (int i = 0; i < r; i++)
+    {
+        cout << arr[i][col] << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    ifstream fin;
+    fin.open("task2.txt");
+    int** data = nullptr;
+
+    int rows = rowsread(fin);
+    fin.close();
+    fin.open("task2.txt");
+    allocaterows(data, rows);
+    allocatecol(data, rows);
+    fin.close();
+    fin.open("task2.txt");
+    readdata(fin, data, rows);
+    
+    // Display the entire array
+    display(data, rows);
+    cout << endl;
+    
+    // Display 2nd row
+    displayRow(data, 1, rows - 1); // Index 1 corresponds to the 2nd row
+    
+    // Display 3rd column
+    displayColumn(data, 2, rows - 1); // Index 2 corresponds to the 3rd column
+    
+    // Calculate and display sums
+    int* sumr = sumrows(data, rows);
+    cout << "sum of rows is:";
+    for (int i = 0; i < rows; i++)
+    {
+        cout << sumr[i] << " ";
+    }
+    cout << endl;
+    
+    int* sumc = sumcols(data, rows);
+    cout << "sum of col is:";
+    for (int i = 0; i < rows; i++)
+    {
+        cout << sumc[i] << " ";
+    }
+    cout << endl;
+    
+    totalsum(data, rows);
+
+    // Clean up allocated memory
+    for (int i = 0; i < rows; i++)
+    {
+        delete[] data[i];
+    }
+    delete[] data;
+
+    return 0;
+}
