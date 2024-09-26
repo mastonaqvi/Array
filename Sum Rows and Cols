@@ -44,7 +44,7 @@ void totalsum(int** a, int r)
             sum = sum + a[i][j];
         }
     }
-    cout << "total sum: " << sum << endl;
+    cout << "Total sum: " << sum << endl;
 }
 
 int rowsread(ifstream& fin)
