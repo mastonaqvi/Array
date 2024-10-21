@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     char array[1000];
-    cout<<"Enter String: ";
+    cout<<"Enter Strings : ";
     cin>>array;
 
     int num[128]={0};
