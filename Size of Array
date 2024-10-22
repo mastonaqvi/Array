@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-    char array[]="naqvi";
+    char array[]="Muhammad Raza Naqvi";
     int i;
     for(i=0; array[i]!='\0'; i++){
         
