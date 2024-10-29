@@ -12,7 +12,7 @@ int main(){
     cout<<"Enter Second String: ";
     cin>>array2;
 
-    cout<<"Enter First String: ";
+    cout<<"Enter Third String: ";
     cin>>array3;
 
 
