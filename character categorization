@@ -1,4 +1,7 @@
-#include <iostream>
+//character categorization
+#include <iostream> 
+
+
 using namespace std;
 int main() {
     char array[1000];
