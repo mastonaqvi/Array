@@ -3,7 +3,7 @@ using namespace std;
 int main(){
 
     char array[27];
-    cout<<"Enter String: ";
+    cout<<"Enter  String ";
     cin>>array;
 
     for(int i=0; array[i]!='\0'; i++){
